@@ -15,6 +15,19 @@ class PlaySoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioPlayerNode: AVAudioPlayerNode!
     var audioFile: AVAudioFile!
     
+    
+    // Temporary remove errors
+    var recordedAudioURL: NSURL!
+    var stopTimer: NSTimer!
+    var stopButton: UIButton!
+    var snailButton: UIButton!
+    var chipmunkButton: UIButton!
+    var rabbitButton: UIButton!
+    var vaderButton: UIButton!
+    var echoButton: UIButton!
+    var reverbButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -23,7 +23,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     
     // raw values correspond to sender tags
     enum PlayingState { case Playing, NotPlaying }
-
     
     // MARK: Audio Functions
     
