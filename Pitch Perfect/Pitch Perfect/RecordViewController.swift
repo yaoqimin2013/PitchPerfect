@@ -11,8 +11,9 @@ import UIKit
 class RecordViewController: UIViewController {
 
     
+    @IBOutlet weak var recordStatus: UILabel!
     @IBOutlet weak var microphone: UIButton!
-    @IBOutlet weak var record: UIButton!
+    @IBOutlet weak var stop: UIButton!
     
     
     override func viewDidLoad() {
@@ -21,33 +22,33 @@ class RecordViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
         applyDefaultSettings()
     }
     
     @IBAction func playMicrophone(sender: AnyObject) {
     
         microphoneDidPlay()
-        
-        print("play microphone")
-    
     }
     
     
-    @IBAction func record(sender: AnyObject) {
+    @IBAction func stop(sender: AnyObject) {
     
         applyDefaultSettings()
-        
-        print("play record")
     }
     
     func applyDefaultSettings() -> Void {
+        recordStatus.text = "Record!"
         microphone.enabled = true
-        record.enabled = false
+        stop.enabled = false
     }
     
     func microphoneDidPlay() -> Void {
+        recordStatus.text = "Recording!"
         microphone.enabled = false
-        record.enabled = true
+        stop.enabled = true
     }
 }
 

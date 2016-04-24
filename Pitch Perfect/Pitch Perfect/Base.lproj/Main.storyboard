@@ -24,32 +24,59 @@
                                     <action selector="playMicrophone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M2l-UE-FaX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-7P-aFJ">
-                                <rect key="frame" x="273" y="385" width="54" height="30"/>
-                                <state key="normal" title="Record!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-7P-aFJ" userLabel="Stop">
+                                <rect key="frame" x="272" y="427" width="56" height="50"/>
+                                <state key="normal" title="!" image="Stop"/>
                                 <connections>
-                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rab-gs-cay"/>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6U-CY-VdL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVo-8G-UIr">
+                                <rect key="frame" x="279" y="378" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="He5-Nt-wVy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="58o-eW-3ay"/>
-                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="top" secondItem="He5-Nt-wVy" secondAttribute="bottom" constant="35" id="9l2-JJ-uLJ"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="top" secondItem="He5-Nt-wVy" secondAttribute="bottom" constant="25" id="9l2-JJ-uLJ"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="leading" secondItem="zVo-8G-UIr" secondAttribute="leading" constant="-7" id="LGD-dL-kb7"/>
+                            <constraint firstItem="zVo-8G-UIr" firstAttribute="top" secondItem="He5-Nt-wVy" secondAttribute="bottom" constant="28" id="LV6-Vj-Mo8"/>
                             <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MT8-uh-Kdw"/>
+                            <constraint firstItem="zVo-8G-UIr" firstAttribute="leading" secondItem="He5-Nt-wVy" secondAttribute="leading" id="Mpa-Dw-DI3"/>
+                            <constraint firstItem="zVo-8G-UIr" firstAttribute="centerX" secondItem="He5-Nt-wVy" secondAttribute="centerX" id="Sfy-zn-TSH"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerX" secondItem="He5-Nt-wVy" secondAttribute="centerX" id="WLw-RO-wYM"/>
                             <constraint firstItem="He5-Nt-wVy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agA-dM-86j"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="top" secondItem="zVo-8G-UIr" secondAttribute="bottom" constant="28" id="bMW-80-51M"/>
                             <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dzX-9s-RnQ"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="top" secondItem="zVo-8G-UIr" secondAttribute="bottom" constant="28" id="hQD-Bs-Ult"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hbx-HR-wDz"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerX" secondItem="He5-Nt-wVy" secondAttribute="centerX" id="uZA-AU-nEX"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="leading" secondItem="zVo-8G-UIr" secondAttribute="leading" id="xhJ-hy-QeR"/>
+                            <constraint firstItem="zVo-8G-UIr" firstAttribute="centerX" secondItem="He5-Nt-wVy" secondAttribute="centerX" id="ynQ-sF-6Zi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Mpa-Dw-DI3"/>
+                                <exclude reference="ynQ-sF-6Zi"/>
+                                <exclude reference="9l2-JJ-uLJ"/>
+                                <exclude reference="LGD-dL-kb7"/>
+                                <exclude reference="MT8-uh-Kdw"/>
                                 <exclude reference="dzX-9s-RnQ"/>
+                                <exclude reference="hQD-Bs-Ult"/>
+                                <exclude reference="hbx-HR-wDz"/>
+                                <exclude reference="uZA-AU-nEX"/>
+                                <exclude reference="xhJ-hy-QeR"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="ZSA-5y-phu"/>
                     <connections>
                         <outlet property="microphone" destination="He5-Nt-wVy" id="fd2-61-CKG"/>
-                        <outlet property="record" destination="qcP-7P-aFJ" id="wjr-5J-fso"/>
+                        <outlet property="recordStatus" destination="zVo-8G-UIr" id="xnp-Qr-Xhx"/>
+                        <outlet property="stop" destination="qcP-7P-aFJ" id="nTK-7b-kfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,5 +104,6 @@
     </scenes>
     <resources>
         <image name="Record" width="100" height="100"/>
+        <image name="Stop" width="50" height="50"/>
     </resources>
 </document>
