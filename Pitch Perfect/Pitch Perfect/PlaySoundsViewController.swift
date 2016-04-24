@@ -16,5 +16,14 @@ class PlayViewController: UIViewController {
         
     }
     
+    @IBAction func playSound(sender: AnyObject) {
+        
+        
+        
+        
+    }
+    
+    @IBAction func stopSound(sender: AnyObject) {
+    }
     
 }

@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
-class RecordViewController: UIViewController {
+class RecordViewController: UIViewController, AVAudioRecorderDelegate {
 
-    
     @IBOutlet weak var recordStatus: UILabel!
     @IBOutlet weak var microphone: UIButton!
     @IBOutlet weak var stop: UIButton!
     
+    var audioRecorder: AVAudioRecorder!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +32,32 @@ class RecordViewController: UIViewController {
     @IBAction func playMicrophone(sender: AnyObject) {
     
         microphoneDidPlay()
+        
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentationDirectory, .UserDomainMask, true)[0] as String
+        
+        let recordingName = "recordedVoice.wav"
+        let pathArray = [dirPath, recordingName]
+        let filePath = NSURL.fileURLWithPathComponents(pathArray)
+        print(filePath)
+        
+        let session = AVAudioSession.sharedInstance()
+        try! session.setCategory(AVAudioSessionCategoryRecord)
+        
+        try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
+        audioRecorder.delegate = self
+        audioRecorder.meteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.record()
     }
     
     
     @IBAction func stop(sender: AnyObject) {
     
         applyDefaultSettings()
+        
+        audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
     }
     
     func applyDefaultSettings() -> Void {
