@@ -6,10 +6,14 @@
 //  Copyright © 2016 Qimin Yao. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import AVFoundation
 
-class PlayViewController: UIViewController {
+class PlaySoundsViewController: UIViewController, AVAudioRecorderDelegate {
+    
+    var audioEngine: AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    var audioFile: AVAudioFile!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +24,12 @@ class PlayViewController: UIViewController {
         
         
         
-        
     }
     
     @IBAction func stopSound(sender: AnyObject) {
+    
+    
+    
     }
     
 }
