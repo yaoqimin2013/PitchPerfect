@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,9 +16,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He5-Nt-wVy">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <state key="normal" backgroundImage="Record"/>
+                                <connections>
+                                    <action selector="playMicrophone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M2l-UE-FaX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-7P-aFJ">
+                                <rect key="frame" x="273" y="385" width="54" height="30"/>
+                                <state key="normal" title="Record!"/>
+                                <connections>
+                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rab-gs-cay"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="He5-Nt-wVy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="58o-eW-3ay"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="top" secondItem="He5-Nt-wVy" secondAttribute="bottom" constant="35" id="9l2-JJ-uLJ"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MT8-uh-Kdw"/>
+                            <constraint firstItem="He5-Nt-wVy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agA-dM-86j"/>
+                            <constraint firstItem="qcP-7P-aFJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dzX-9s-RnQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dzX-9s-RnQ"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="ZSA-5y-phu"/>
+                    <navigationItem key="navigationItem" title="Record" id="ZSA-5y-phu"/>
+                    <connections>
+                        <outlet property="microphone" destination="He5-Nt-wVy" id="fd2-61-CKG"/>
+                        <outlet property="record" destination="qcP-7P-aFJ" id="wjr-5J-fso"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,4 +75,7 @@
             <point key="canvasLocation" x="283" y="999"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Record" width="100" height="100"/>
+    </resources>
 </document>
