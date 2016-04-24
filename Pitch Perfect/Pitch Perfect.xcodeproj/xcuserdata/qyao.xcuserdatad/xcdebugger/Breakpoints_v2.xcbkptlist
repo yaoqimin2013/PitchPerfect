@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pitch Perfect/PlayViewController.swift"
-            timestampString = "483153626.557273"
+            filePath = "Pitch Perfect/PlaySoundsViewController.swift"
+            timestampString = "483155250.099358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "playSound(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
