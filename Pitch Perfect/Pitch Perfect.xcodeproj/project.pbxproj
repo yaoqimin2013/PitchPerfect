@@ -15,7 +15,6 @@
 		1446F9421CCC3E2F00B05AFA /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446F9411CCC3E2F00B05AFA /* Pitch_PerfectTests.swift */; };
 		1446F94D1CCC3E2F00B05AFA /* Pitch_PerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446F94C1CCC3E2F00B05AFA /* Pitch_PerfectUITests.swift */; };
 		1446F95B1CCC558A00B05AFA /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446F95A1CCC558A00B05AFA /* PlaySoundsViewController.swift */; };
-		1446F96C1CCC612300B05AFA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1446F96B1CCC612300B05AFA /* AVFoundation.framework */; };
 		14B481321CCD75AE002D1EDF /* PlaySoundsViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B481311CCD75AE002D1EDF /* PlaySoundsViewController+Audio.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +50,6 @@
 		1446F94C1CCC3E2F00B05AFA /* Pitch_PerfectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectUITests.swift; sourceTree = "<group>"; };
 		1446F94E1CCC3E3000B05AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1446F95A1CCC558A00B05AFA /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
-		1446F96B1CCC612300B05AFA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		14B481311CCD75AE002D1EDF /* PlaySoundsViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaySoundsViewController+Audio.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1446F96C1CCC612300B05AFA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +81,6 @@
 		1446F9201CCC3E2F00B05AFA = {
 			isa = PBXGroup;
 			children = (
-				1446F96B1CCC612300B05AFA /* AVFoundation.framework */,
 				1446F92B1CCC3E2F00B05AFA /* Pitch Perfect */,
 				1446F9401CCC3E2F00B05AFA /* Pitch PerfectTests */,
 				1446F94B1CCC3E2F00B05AFA /* Pitch PerfectUITests */,

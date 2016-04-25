@@ -33,7 +33,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
         microphoneDidPlay()
         
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentationDirectory, .UserDomainMask, true)[0] as String
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -60,6 +60,16 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         try! audioSession.setActive(false)
     }
     
+    
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        print("Finish recording")
+        if flag {
+            self.performSegueWithIdentifier("stopRecording", sender: audioRecorder.url)
+        } else {
+            print("Saving of recording failed")
+        }
+    }
+    
     func applyDefaultSettings() -> Void {
         recordStatus.text = "Record!"
         microphone.enabled = true
@@ -71,5 +81,14 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         microphone.enabled = false
         stop.enabled = true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "stopRecording" {
+            let playSoundVC = segue.destinationViewController as! PlaySoundsViewController
+            let recordedAudioURL = sender as! NSURL
+            playSoundVC.recordedAudioURL = recordedAudioURL
+        }
+    }
+    
 }
 
