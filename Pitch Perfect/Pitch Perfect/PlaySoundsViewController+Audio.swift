@@ -154,8 +154,8 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         chipmunkButton.enabled = enabled
         rabbitButton.enabled = enabled
         vaderButton.enabled = enabled
-        //echoButton.enabled = enabled
-        //reverbButton.enabled = enabled
+        echoButton.enabled = enabled
+        reverbButton.enabled = enabled
     }
 
     

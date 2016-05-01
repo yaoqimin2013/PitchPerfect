@@ -25,7 +25,7 @@ class PlaySoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var recordedAudioURL: NSURL!
     var stopTimer: NSTimer!
     
-    enum ButtonType: Int { case Slow = 0, Fast, Chipmunk, Vader }
+    enum ButtonType: Int { case Slow = 0, Fast, Chipmunk, Vader, Echo, Reverb }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,10 @@ class PlaySoundsViewController: UIViewController, AVAudioRecorderDelegate {
             playSound(pitch: 1000)
         case .Vader:
             playSound(pitch: -1000)
+        case .Echo:
+            playSound(echo: true)
+        case .Reverb:
+            playSound(reverb: true)
         }
         
         configureUI(.Playing)
